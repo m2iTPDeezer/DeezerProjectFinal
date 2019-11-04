@@ -1,0 +1,40 @@
+<div class="row" *ngIf ="!isConnect">
+    <div class="col">
+        <div class="row">
+            <div class="col offset-3">
+                <h1>Inscription</h1>
+            </div>
+        </div>
+
+        <div class="row m-3">
+            <div class="col-5 offset-3">
+                <form>
+                    <div class="row">
+                        <label class="col-4">Votre avatar : </label>
+                        <input class="form-control col-8" #file type="file" (change)="UploadFile(file.files)"/>
+                    </div>
+                    <div class="row">
+                        <label class="col-4">Pseudo : </label>
+                        <input class="form-control col-8" type="text" name="pseudo" [(ngModel)]="pseudo" />
+                    </div>
+                    <div class="row">
+                        <label class="col-4">Mail : </label>
+                        <input class="form-control col-8" type="text" name="mail" [(ngModel)]="mail" />
+                    </div>
+                    <div class="row">
+                        <label class="col-4">Rôle : </label>
+                        <input class="form-control col-8" type="text" name="role" [(ngModel)]="role"/>
+                    </div>
+                    <div class="row">
+                        <label class="col-4">Mot de passe : </label>
+                        <input class="form-control col-8" type="password" name="password" [(ngModel)]="password" />
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="col btn btn-dark" (click)="Inscription()">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
