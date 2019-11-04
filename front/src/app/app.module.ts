@@ -27,6 +27,7 @@ import { GuardService } from './guard.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoaderComponent } from './loader/loader.component';
 import { RegisterComponent } from './register/register.component';
+import { List25Component } from './list25/list25.component';
 
 const routes : Routes = [
   {
@@ -60,7 +61,8 @@ const routes : Routes = [
     StreamComponent,
     AlertComponent,
     LoaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    List25Component
   ],
   imports: [
     BrowserModule,

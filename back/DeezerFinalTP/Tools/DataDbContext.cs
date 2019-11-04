@@ -14,7 +14,8 @@ namespace DeezerFinalTP.Tools
 
         }
         public DbSet<Utilisateur> Utilisateurs { get; set; }
-    
+        public DbSet<Track> Tracks { get; set; }
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

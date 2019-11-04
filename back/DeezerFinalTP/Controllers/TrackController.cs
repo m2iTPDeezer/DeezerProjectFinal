@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DeezerFinalTP.Models;
+using DeezerFinalTP.Tools;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +18,7 @@ namespace DeezerFinalTP.Controllers
 
         private DataDbContext data;
 
-        public ContactController(DataDbContext _data)
+        public TrackController(DataDbContext _data)
         {
             data = _data;
         }
@@ -26,7 +28,9 @@ namespace DeezerFinalTP.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-            return Ok(data.Users.ToList());
+            Track u = new Track();
+            u = data.Tracks.Last();
+            return Ok(data.Tracks.Where(x=>x.Id <= u.Id && x.Id > (u.Id - 25)).ToList());
         }
 
         // GET: api/Track/5

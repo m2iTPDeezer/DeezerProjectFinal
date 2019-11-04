@@ -53,7 +53,9 @@ export class ApiService {
     //reportProgress => pour ecouter la progression de l'upload; observe => pour ecouter la totalité de l'event et non uniquement la réponse du serveur
     return this.http.post(this.urlBase+'/'+url, formdata,{headers : headers,reportProgress: true, observe:'events'});
     //return this.http.post(this.baseUrl+'/'+url, formdata);
+  }
 
-
+  list25 = (url)=>{
+    return this.http.get(this.urlBase + '/'+url);
   }
   }
