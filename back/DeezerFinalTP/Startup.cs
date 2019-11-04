@@ -28,11 +28,20 @@ namespace DeezerFinalTP
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<ILoginService, LoginService>();
-            var appSettingsSection = Configuration.GetSection("AppSettings");
-            services.Configure<AppSetting>(appSettingsSection);
-            var appSettings = Configuration.Get<AppSetting>();
+            services.AddDbContext<DataDbContext>();
 
+            //autoriser les cross origin
+            services.AddCors(cors =>
+            {
+                cors.AddPolicy("AllowAll", o =>
+                {
+                    o.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials();
+                });
+            });
+
+            //ajout pour les authentifications
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -43,20 +52,15 @@ namespace DeezerFinalTP
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("secretstring")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("agent secret")),
                     ValidateIssuer = false,
                     ValidateAudience = false,
                 };
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            services.AddCors(options =>
+            services.AddSpaStaticFiles(configuration =>
             {
-                options.AddPolicy("AllowAll", policy =>
-                {
-                    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-                });
+                configuration.RootPath = "ClientApp/dist";
             });
         }
 
