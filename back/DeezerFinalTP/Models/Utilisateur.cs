@@ -13,6 +13,7 @@ namespace DeezerFinalTP.Models
         private string avatar;
         private string pass;
         private string role;
+        private string token;
 
         public int Id { get => id; set => id = value; }
         public string Mail { get => mail; set => mail = value; }
@@ -20,5 +21,6 @@ namespace DeezerFinalTP.Models
         public string Avatar { get => avatar; set => avatar = value; }
         public string Pass { get => pass; set => pass = value; }
         public string Role { get => role; set => role = value; }
+        public string Token { get => token; set => token = value; }
     }
 }
