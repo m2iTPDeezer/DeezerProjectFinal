@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DeezerFinalTP.Models;
 using DeezerFinalTP.Tools;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,7 @@ namespace DeezerFinalTP.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [EnableCors("AllowAll")]
     public class UtilisateurController : ControllerBase
     {
         DataDbContext data;
