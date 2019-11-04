@@ -1,0 +1,19 @@
+<div class="row sidebar bg-dark">
+    <div class="col">
+        <div class="row">
+            <app-item-menu-user></app-item-menu-user>
+        </div>
+        <div class="row">
+            <h2>Menu</h2>
+        </div>
+        <div class="row" >
+            <app-item-menu icon="fa fa-cloud" title="Stream" link="/"></app-item-menu>
+        </div>
+        <div class="row" *ngIf="islogged">
+            <app-item-menu icon="fa fa-heart" title="Likes" link="/like"></app-item-menu>
+        </div>
+        <div class="row" *ngIf="islogged">
+            <app-item-menu icon="fa fa-bookmark" title="PlayLists" link="/playlist"></app-item-menu>
+        </div>
+    </div>
+</div>

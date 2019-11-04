@@ -1,0 +1,22 @@
+<div class="container-fluid music-container">
+    <div class="row">
+        <div class="col">
+            <app-search></app-search>
+        </div>
+    </div>
+    <div class="row music-body">
+        <div class='col-2'>
+            <app-side-bar></app-side-bar>
+        </div>
+        <div class="col-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="row">
+        <app-player class="col app-player"  [track]="trackTest" (nextEmiter)="nextTrack($event)" (previousEmiter)="previousTrack($event)">
+        </app-player>
+    </div>
+</div>
+<div #popUp>
+
+</div>

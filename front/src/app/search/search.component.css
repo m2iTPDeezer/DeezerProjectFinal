@@ -1,0 +1,11 @@
+.search  {
+    background: black;
+    padding: 10px
+}
+.search input {
+    width: 100%;
+    background-color: gray;
+    border : none;
+    border-bottom: 1px solid darkgray;
+    padding: 5px
+}

@@ -1,0 +1,10 @@
+.alert {
+    position : absolute;
+    top: 0;
+    min-width: 200px;
+    height: 200px;
+    background-color: #efefef;
+    color: black;
+    z-index: 10;
+    text-align: center;
+}

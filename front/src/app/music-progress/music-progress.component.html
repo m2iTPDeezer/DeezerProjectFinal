@@ -1,0 +1,9 @@
+<div class="container-progress">
+    <div class="progress"  #progress (click)="changePosition($event)">
+        <div class="progress-dynamic" [style.width]="position | pourcentage">
+
+        </div>
+    </div>
+    <div class="pos" [style.left]="position | pourcentage">
+    </div>
+</div>
