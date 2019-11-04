@@ -26,6 +26,7 @@ import { SearchService } from './search.service';
 import { GuardService } from './guard.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoaderComponent } from './loader/loader.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes : Routes = [
   {
@@ -58,7 +59,8 @@ const routes : Routes = [
     LikeComponent,
     StreamComponent,
     AlertComponent,
-    LoaderComponent
+    LoaderComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
